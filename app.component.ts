@@ -12,6 +12,10 @@ export class AppComponent implements OnInit {
   //check user typing
   userIsTyping = false;
 
+  //Get InputTextValue
+  //inputext = (<HTMLInputElement>document.getElementById("myText"));
+  
+
   //Get the message
   //message: string="Message Box Values ...";
   
@@ -31,6 +35,11 @@ export class AppComponent implements OnInit {
       this.onClick();
     }else{
       this.userIsTyping = true;  
+     
+      //Input style
+      var inputext = (<HTMLInputElement>document.getElementById("myText"));
+      inputext.style.color = "blue";
+      inputext.style.fontStyle = "normal";
     }	  
 
   }
@@ -39,9 +48,17 @@ export class AppComponent implements OnInit {
   onClick(){
     this.userIsTyping = false;
     var inputValue = (<HTMLInputElement>document.getElementById("myText")).value;
+    
     //this.message=inputValue;
     this.messagelist = this.messagelist.concat('\n'+this.formDate(inputValue));
+    
+    // Reinitialize input as empty
     (<HTMLInputElement>document.getElementById("myText")).value="";
+    
+    //Input style
+    var inputext = (<HTMLInputElement>document.getElementById("myText"));
+    inputext.style.color = "gray";
+    inputext.style.fontStyle = "italic";
 
   }
   

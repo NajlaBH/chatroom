@@ -7,7 +7,7 @@
             cdkTextareaAutosize
             cdkAutosizeMinRows="1"
 	    cdkAutosizeMaxRows="10"> {{message | formatdate }} </textarea-->
-    <textarea style="width:600px; height:250px;" value="THIS IS READONLY" onkeydown="return false"> {{messagelist}}</textarea>
+    <textarea style="width:600px; height:250px; color:navy;" value="THIS IS READONLY" onkeydown="return false"> {{messagelist}}</textarea>
 <br>
 <br>
 <br>
@@ -15,6 +15,6 @@
 <!-- input : is typing-->
 <label>My input</label><br>
 
-<input id="myText" (keydown)="onKeydown($event)">
+<input style="width:200px;" id="myText" (keydown)="onKeydown($event)" placeholder="Please Type here your message.">
 <button mat-button (click)="onClick()">Send</button>
 <p *ngIf=" userIsTyping " >is typing ....</p>
