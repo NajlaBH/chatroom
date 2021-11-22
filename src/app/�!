@@ -2,12 +2,10 @@
 
 <!-- MessageBox -->
 <label>MessageBox</label><br>
-<!--textarea style="width:600px; height:200px;"
-	    matInput
+<textarea matInput
             cdkTextareaAutosize
             cdkAutosizeMinRows="1"
-	    cdkAutosizeMaxRows="10"> {{message | formatdate }} </textarea-->
-    <textarea style="width:600px; height:250px;" value="THIS IS READONLY" onkeydown="return false"> {{messagelist}}</textarea>
+	    cdkAutosizeMaxRows="10"> {{message}} </textarea>
 <br>
 <br>
 <br>
@@ -15,6 +13,6 @@
 <!-- input : is typing-->
 <label>My input</label><br>
 
-<input id="myText" (keydown)="onKeydown($event)">
+<input (keydown)="onKeydown($event)">
 <button mat-button (click)="onClick()">Send</button>
 <p *ngIf=" userIsTyping " >is typing ....</p>
